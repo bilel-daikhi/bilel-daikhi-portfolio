@@ -17,11 +17,12 @@ jobs:
       - uses: actions/checkout@master
       - uses: actions/setup-node@master
         with: 
-          node-version: "16.x"
+          node-version: "16.x" 
+      - run: npm install --legacy-peer-deps 
       - run: |
           touch .env
-          echo DB_URL=${{ secrets.DB_URL }} >> .env    
-      - run: npm install --legacy-peer-deps 
+          echo fireBaseApi=${{ secrets.FIREBASEAPI }} >> .env   
+          echo API_KEY=${{ secrets.BASEURL }} >> .env
       - run: npm run build
       - uses: 8398a7/action-slack@v3
         with:
