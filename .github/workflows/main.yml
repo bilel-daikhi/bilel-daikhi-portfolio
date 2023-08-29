@@ -20,6 +20,8 @@ jobs:
           node-version: "16.x"
       - run: npm install --legacy-peer-deps 
       - run: npm run build
+        env:
+          DB_URL: ${{secrets.DB_URL}}
       - uses: 8398a7/action-slack@v3
         with:
           status: ${{ job.status }}
