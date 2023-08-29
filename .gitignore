@@ -2,6 +2,7 @@
 # angular files
 src/environments/*
 .env
+/public
 # Compiled output
 /dist
 /tmp
