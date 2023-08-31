@@ -8,17 +8,21 @@
         </button>
         <div class="collapse navbar-collapse" id="main-navbar">
           <ul class="navbar-nav ml-auto">
-            <li class="nav-item" [class.active]="(activeFragment | async)==='home'">
+            <li class="nav-item" [class.active]="(activeFragment | async)==='home' ? 'active':''">
+       
               <a [routerLink]="['/']"  [fragment]=" 'home'" class="nav-link" data-animate="scrolling">{{'translation.home' | translate}}</a>
             </li>
-            <li class="nav-item" [class.active]="(activeFragment | async)==='about'">
+            <li class="nav-item" [class.active]="(activeFragment | async)==='about' ? 'active':''">
+          
               <a   [routerLink]="['/']" [fragment]="'about'"  class="nav-link" data-animate="scrolling">{{'translation.about' | translate}}</a>
             </li>
-            <li class="nav-item" [class.active]="(activeFragment | async)==='portfolio'" >
+            <li class="nav-item" [class.active]="(activeFragment | async)==='portfolio' ? 'active':''" >
+        
               <a   [routerLink]="['/' ]" [fragment]="'portfolio'" class="nav-link" data-animate="scrolling">Portfolio</a>
             </li>
            
-            <li class="nav-item" [class.active]="(activeFragment | async)==='contact'">
+            <li class="nav-item" [class]="(activeFragment | async)==='contact'? 'active':''">
+              
               <a   [routerLink]="['/' ]" [fragment]="'contact'" class="nav-link" data-animate="scrolling">{{'translation.contact' | translate}}</a>
             </li>
           </ul>
