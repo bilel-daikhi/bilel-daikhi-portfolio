@@ -8,20 +8,21 @@
         </button>
         <div class="collapse navbar-collapse" id="main-navbar">
           <ul class="navbar-nav ml-auto">
-            <li class="nav-item active">
-              <a [routerLink]="['landing']"  [fragment]="'home'" class="nav-link" data-animate="scrolling">{{'translation.home' | translate}}</a>
+            <li class="nav-item" [class.active]="(activeFragment | async)==='home'">
+              <a [routerLink]="['/']"  [fragment]=" 'home'" class="nav-link" data-animate="scrolling">{{'translation.home' | translate}}</a>
             </li>
-            <li class="nav-item">
-              <a   [routerLink]="['landing']" [fragment]="'about'" class="nav-link" data-animate="scrolling">{{'translation.about' | translate}}</a>
+            <li class="nav-item" [class.active]="(activeFragment | async)==='about'">
+              <a   [routerLink]="['/']" [fragment]="'about'"  class="nav-link" data-animate="scrolling">{{'translation.about' | translate}}</a>
             </li>
-            <li class="nav-item">
-              <a   [routerLink]="['landing' ]" [fragment]="'portfolio'" class="nav-link" data-animate="scrolling">Portfolio</a>
+            <li class="nav-item" [class.active]="(activeFragment | async)==='portfolio'" >
+              <a   [routerLink]="['/' ]" [fragment]="'portfolio'" class="nav-link" data-animate="scrolling">Portfolio</a>
             </li>
            
-            <li class="nav-item">
-              <a   [routerLink]="['landing' ]" [fragment]="'contact'" class="nav-link" data-animate="scrolling">{{'translation.contact' | translate}}</a>
+            <li class="nav-item" [class.active]="(activeFragment | async)==='contact'">
+              <a   [routerLink]="['/' ]" [fragment]="'contact'" class="nav-link" data-animate="scrolling">{{'translation.contact' | translate}}</a>
             </li>
           </ul>
+        
           <ul class="nav ml-auto">
             <li class="nav-item">
               <button class="btn btn-fab btn-theme no-shadow" (click)="changeLanguage()">{{currentlanguage==='fr'? 'FR':'EN'}}</button>
