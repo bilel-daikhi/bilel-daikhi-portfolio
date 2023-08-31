@@ -1,12 +1,17 @@
 import { Component, HostListener } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, IsActiveMatchOptions, Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
+
+ 
+import {share } from 'rxjs/operators';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css'],
 })
 export class HeaderComponent {
+  activeFragment = this.activatedRoute.fragment.pipe(share()); 
+  currentFragment:string='home';
   is_project_details: boolean = false;
   is_all_projects: boolean = false;
   is_main: boolean = false;
@@ -14,7 +19,7 @@ export class HeaderComponent {
   currentlanguage: any;
   constructor(
     public translateService: TranslateService,
-    private router: Router
+    private router: Router,private activatedRoute:ActivatedRoute
   ) {
     translateService.addLangs(['fr', 'en']);
     translateService.setDefaultLang('en');
@@ -40,6 +45,10 @@ export class HeaderComponent {
         this.is_main = false;
       }
     });
+    this.activatedRoute.fragment.subscribe( currentFragment =>{
+      console.log('fragment is: '+currentFragment);
+      this.currentFragment!=currentFragment;
+ })
   }
 
   ngOnInit(): void {
