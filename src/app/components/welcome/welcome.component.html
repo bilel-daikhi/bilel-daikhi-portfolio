@@ -1,0 +1,640 @@
+<div class="vg-page page-about" id="about">
+  <div class="container py-5">
+    <div class="row">
+      <div class="col-lg-4 py-3">
+        <div class="img-place wow fadeInUp">
+          <img src="/assets/img/bilel.jpg" alt="" />
+        </div>
+      </div>
+      <div class="col-lg-6 offset-lg-1 wow fadeInRight">
+        <h1 class="fw-light">Bilel Daikhi</h1>
+        <h5 class="fg-theme mb-3">
+          {{ "translation.occupation" | translate }}
+        </h5>
+        <p class="text-muted">{{ "translation.introduction" | translate }}</p>
+        <ul class="theme-list">
+          <li>
+            <b>{{ "translation.from" | translate }}: </b
+            >{{ "translation.tunis-tunisia" | translate }}
+          </li>
+          <li>
+            <b>{{ "translation.live-in" | translate }}: </b
+            >{{ "translation.tunis-tunisia" | translate }}
+          </li>
+          <!--<li><b>{{'translation.age' | translate}}:</b> 34</li>-->
+          <li>
+            <b>{{ "translation.gender" | translate }}: </b
+            >{{ "translation.male" | translate }}
+          </li>
+        </ul>
+        <a
+          class="btn btn-theme-outline"
+          *ngIf="currentlanguage === 'fr'"
+          [href]="['https://cvdesignr.com/p/636165df32a2a']"
+          target="_blank"
+          >{{ "translation.download" | translate }}</a
+        >
+        <a
+          class="btn btn-theme-outline"
+          *ngIf="currentlanguage === 'en'"
+          [href]="['https://cvdesignr.com/p/64ce3df91bcfd']"
+          target="_blank"
+          >{{ "translation.download" | translate }}</a
+        >
+      </div>
+    </div>
+  </div>
+  <div class="container py-5">
+    <h1 class="text-center fw-normal wow fadeIn">
+      {{ "translation.my-skills" | translate }}
+    </h1>
+    <div class="row py-3">
+      <div class="col-md-6">
+        <div class="px-lg-3">
+          <h4 class="wow fadeInUp">
+            {{ "translation.coding-skills" | translate }}
+          </h4>
+          <div class="progress-wrapper wow fadeInUp">
+            <span class="caption">Java</span>
+            <div class="progress">
+              <div
+                class="progress-bar"
+                role="progressbar"
+                style="width: 85%"
+                aria-valuenow="85"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              >
+                85%
+              </div>
+            </div>
+          </div>
+          <div class="progress-wrapper wow fadeInUp">
+            <span class="caption">PL/SQL</span>
+            <div class="progress">
+              <div
+                class="progress-bar"
+                role="progressbar"
+                style="width: 80%"
+                aria-valuenow="75"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              >
+                80%
+              </div>
+            </div>
+          </div>
+          <div class="progress-wrapper wow fadeInUp">
+            <span class="caption">JS + HTML + CSS </span>
+            <div class="progress">
+              <div
+                class="progress-bar"
+                role="progressbar"
+                style="width: 70%"
+                aria-valuenow="70"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              >
+                70%
+              </div>
+            </div>
+          </div>
+          <div class="progress-wrapper wow fadeInUp">
+            <span class="caption">TypeScript</span>
+            <div class="progress">
+              <div
+                class="progress-bar"
+                role="progressbar"
+                style="width: 85%"
+                aria-valuenow="85"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              >
+                85%
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="px-lg-3">
+          <h4 class="wow fadeInUp">
+            {{ "translation.frameworks" | translate }}
+          </h4>
+          <div class="progress-wrapper wow fadeInUp">
+            <span class="caption">Spring Framework</span>
+            <div class="progress">
+              <div
+                class="progress-bar"
+                role="progressbar"
+                style="width: 80%"
+                aria-valuenow="75"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              >
+                80%
+              </div>
+            </div>
+          </div>
+          <div class="progress-wrapper wow fadeInUp">
+            <span class="caption">JavaFX</span>
+            <div class="progress">
+              <div
+                class="progress-bar"
+                role="progressbar"
+                style="width: 85%"
+                aria-valuenow="75"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              >
+                85%
+              </div>
+            </div>
+          </div>
+          <div class="progress-wrapper wow fadeInUp">
+            <span class="caption">Angular</span>
+            <div class="progress">
+              <div
+                class="progress-bar"
+                role="progressbar"
+                style="width: 75%"
+                aria-valuenow="75"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              >
+                75%
+              </div>
+            </div>
+          </div>
+          <div class="progress-wrapper wow fadeInUp">
+            <span class="caption">Oracle APEX</span>
+            <div class="progress">
+              <div
+                class="progress-bar"
+                role="progressbar"
+                style="width: 75%"
+                aria-valuenow="75"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              >
+                75%
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container pt-5">
+    <div class="row">
+      <div class="col-md-6 wow fadeInRight">
+        <h2 class="fw-normal">{{ "translation.education" | translate }}</h2>
+        <ul class="timeline mt-4 pr-md-5">
+          <li>
+            <div class="title">2017</div>
+            <div class="details">
+              <h5>{{ "translation.software-engineer" | translate }}</h5>
+              <small class="fg-theme">ESPRIT</small>
+              <p>{{ "translation.esprit-full" | translate }}</p>
+            </div>
+          </li>
+          <li>
+            <div class="title">2012</div>
+            <div class="details">
+              <h5>{{ "translation.lfstic-full" | translate }}</h5>
+              <small class="fg-theme">FST Tunis El Manar</small>
+              <p>{{ "translation.fst-full" | translate }}</p>
+            </div>
+          </li>
+          <li>
+            <div class="title">2007</div>
+            <div class="details">
+              <h5>{{ "translation.bac-math" | translate }}</h5>
+              <small class="fg-theme">lycee el imtiez</small>
+              <p>lycee el imtiez</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="col-md-6 wow fadeInRight" data-wow-delay="200ms">
+        <h2 class="fw-normal">{{ "translation.experience" | translate }}</h2>
+        <ul class="timeline mt-4 pr-md-5">
+          <li>
+            <div class="title">{{ getProjectById(12)?.time }}</div>
+            <div class="details">
+              <h5>{{ "translation.apex-engineer" | translate }}</h5>
+              <small class="fg-theme">{{
+                "translation.muris" | translate
+              }}</small>
+              <p
+                *ngIf="currentlanguage == 'fr'"
+                [innerHTML]="getProjectById(12)?.subName_fr"
+              ></p>
+              <p
+                *ngIf="currentlanguage == 'en'"
+                [innerHTML]="getProjectById(12)?.subName_en"
+              ></p>
+            </div>
+          </li>
+          <li>
+            <div class="title">{{ getProjectById(11)?.time }}</div>
+            <div class="details">
+              <h5>{{ getProjectById(11)?.name }}</h5>
+              <small class="fg-theme"
+                >Client: {{ getProjectById(11)?.client }}</small
+              >
+              <small>Freelance</small>
+              <p *ngIf="currentlanguage == 'fr'">
+                {{ getProjectById(11)?.subName_fr }}
+              </p>
+              <p *ngIf="currentlanguage == 'en'">
+                {{ getProjectById(11)?.subName_en }}
+              </p>
+            </div>
+          </li>
+          <li>
+            <div class="title">{{ getProjectById(2)?.time }}</div>
+            <div class="details">
+              <h5>{{ getProjectById(2)?.name }}</h5>
+              <small class="fg-theme"
+                >Client: {{ getProjectById(2)?.client }}</small
+              >
+              <small>Freelance</small>
+              <p *ngIf="currentlanguage == 'fr'">
+                {{ getProjectById(2)?.subName_fr }}
+              </p>
+              <p *ngIf="currentlanguage == 'en'">
+                {{ getProjectById(2)?.subName_en }}
+              </p>
+            </div>
+          </li>
+          <li>
+            <div class="text-center wow fadeInUp">
+              <a
+                href="javascript:void(0)"
+                class="btn btn-theme"
+                [routerLink]="['landing']"
+                [fragment]="'portfolio'"
+                >{{ "translation.load-more" | translate }}</a
+              >
+            </div>
+          </li>
+          <div *ngIf="false">
+            <li>
+              <div class="title">{{ getProjectById(10)?.time }}</div>
+              <div class="details">
+                <h5>{{ getProjectById(10)?.name }}</h5>
+                <small class="fg-theme"
+                  >Client: {{ getProjectById(10)?.client }}</small
+                >
+                <small>Freelance</small>
+                <p *ngIf="currentlanguage == 'fr'">
+                  {{ getProjectById(10)?.subName_fr }}
+                </p>
+                <p *ngIf="currentlanguage == 'en'">
+                  {{ getProjectById(10)?.subName_en }}
+                </p>
+              </div>
+            </li>
+            <li>
+              <div class="title">{{ getProjectById(1)?.time }}</div>
+              <div class="details">
+                <h5>{{ getProjectById(1)?.name }}</h5>
+                <small class="fg-theme"
+                  >Client: {{ getProjectById(1)?.client }}</small
+                >
+                <small>Freelance</small>
+                <p *ngIf="currentlanguage == 'fr'">
+                  {{ getProjectById(1)?.subName_fr }}
+                </p>
+                <p *ngIf="currentlanguage == 'en'">
+                  {{ getProjectById(1)?.subName_en }}
+                </p>
+              </div>
+            </li>
+
+            <li>
+              <div class="title">{{ getProjectById(2)?.time }}</div>
+              <div class="details">
+                <h5>{{ getProjectById(2)?.name }}</h5>
+                <small class="fg-theme"
+                  >Client: {{ getProjectById(2)?.client }}</small
+                >
+                <small>Freelance</small>
+                <p *ngIf="currentlanguage == 'fr'">
+                  {{ getProjectById(2)?.subName_fr }}
+                </p>
+                <p *ngIf="currentlanguage == 'en'">
+                  {{ getProjectById(2)?.subName_en }}
+                </p>
+              </div>
+            </li>
+            <li>
+              <div class="title">{{ getProjectById(4)?.time }}</div>
+              <div class="details">
+                <h5>{{ getProjectById(4)?.name }}</h5>
+                <small class="fg-theme"
+                  >Client: {{ getProjectById(4)?.client }}</small
+                >
+                <small>Freelance</small>
+                <p *ngIf="currentlanguage == 'fr'">
+                  {{ getProjectById(8)?.subName_fr }}
+                </p>
+                <p *ngIf="currentlanguage == 'en'">
+                  {{ getProjectById(8)?.subName_en }}
+                </p>
+              </div>
+            </li>
+
+            <li>
+              <div class="title">{{ getProjectById(6)?.time }}</div>
+              <div class="details">
+                <h5>{{ getProjectById(6)?.name }}</h5>
+                <small class="fg-theme"
+                  >Client: {{ getProjectById(6)?.client }}</small
+                >
+                <small>Freelance</small>
+                <p *ngIf="currentlanguage == 'fr'">
+                  {{ getProjectById(6)?.subName_fr }}
+                </p>
+                <p *ngIf="currentlanguage == 'en'">
+                  {{ getProjectById(6)?.subName_en }}
+                </p>
+              </div>
+            </li>
+            <li>
+              <div class="title">MARS 2019 - MAI 2019</div>
+              <div class="details">
+                <h5>SBSA Showroom</h5>
+                <small class="fg-theme">Client: ZIGZAG Concepts</small>
+                <small>Freelance</small>
+                <p>
+                  There are many variations of passages of Lorem Ipsum
+                  available, but the majority have suffered
+                </p>
+              </div>
+            </li>
+            <li>
+              <div class="title">{{ getProjectById(5)?.time }}</div>
+              <div class="details">
+                <h5>{{ getProjectById(5)?.name }}</h5>
+                <small class="fg-theme"
+                  >Client: {{ getProjectById(5)?.client }}</small
+                >
+                <small>Freelance</small>
+                <p *ngIf="currentlanguage == 'fr'">
+                  {{ getProjectById(5)?.subName_fr }}
+                </p>
+                <p *ngIf="currentlanguage == 'en'">
+                  {{ getProjectById(5)?.subName_en }}
+                </p>
+              </div>
+            </li>
+
+            <li>
+              <div class="title">{{ getProjectById(10)?.time }}</div>
+              <div class="details">
+                <h5>{{ getProjectById(10)?.name }}</h5>
+                <small class="fg-theme"
+                  >Client: {{ getProjectById(10)?.client }}
+                </small>
+                <small>Freelance</small>
+                <p *ngIf="currentlanguage == 'fr'">
+                  {{ getProjectById(10)?.subName_fr }}
+                </p>
+                <p *ngIf="currentlanguage == 'en'">
+                  {{ getProjectById(10)?.subName_en }}
+                </p>
+              </div>
+            </li>
+          </div>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="vg-page page-service">
+  <div class="container">
+    <div class="text-center wow fadeInUp">
+      <div class="badge badge-subhead">
+        {{ "translation.service" | translate }}
+      </div>
+    </div>
+    <h1 class="fw-normal text-center wow fadeInUp">
+      {{ "translation.what-i-do" | translate }}
+    </h1>
+    <div class="row mt-5">
+      <div class="col-md-6 col-lg-4 col-xl-3">
+        <div class="card card-service wow fadeInUp">
+          <div class="icon">
+            <span class="ti-microsoft-alt"></span>
+          </div>
+          <div class="caption">
+            <h4 class="fg-theme">
+              {{ "translation.desktop-applications" | translate }}
+            </h4>
+            <p>{{ "translation.desktop-description" | translate }}</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4 col-xl-3">
+        <div class="card card-service wow fadeInUp">
+          <div class="icon">
+            <span class="ti-html5"></span>
+          </div>
+          <div class="caption">
+            <h4 class="fg-theme">
+              {{ "translation.web-applications" | translate }}
+            </h4>
+            <p>{{ "translation.web-description" | translate }}</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4 col-xl-3">
+        <div class="card card-service wow fadeInUp">
+          <div class="icon">
+            <span class="ti-wand"></span>
+          </div>
+          <div class="caption">
+            <h4 class="fg-theme">
+              {{ "translation.maintenance" | translate }}
+            </h4>
+            <p>{{ "translation.app-maintenance" | translate }}</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4 col-xl-3">
+        <div class="card card-service wow fadeInUp">
+          <div class="icon">
+            <span class="ti-share-alt"></span>
+          </div>
+          <div class="caption">
+            <h4 class="fg-theme">
+              {{ "translation.data-migration" | translate }}
+            </h4>
+            <p>{{ "translation.migration-description" | translate }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div
+  class="vg-page page-funfact"
+  style="background-image: url(/assets/img/bg_banner.jpg)"
+>
+  <div class="container">
+    <div class="row section-counter">
+      <div class="col-md-6 col-lg-3 py-4 wow fadeIn">
+        <h1 class="number" data-number="4">+4</h1>
+        <span>{{ "translation.clients" | translate }}</span>
+      </div>
+      <div class="col-md-6 col-lg-3 py-4 wow fadeIn">
+        <h1 class="number" data-number="12">+12</h1>
+        <span>{{ "translation.project-complete" | translate }}</span>
+      </div>
+      <div class="col-md-6 col-lg-3 py-4 wow fadeIn">
+        <h1 class="number" data-number="5">5</h1>
+        <span>{{ "translation.project-ongoing" | translate }}</span>
+      </div>
+      <div class="col-md-6 col-lg-3 py-4 wow fadeIn">
+        <h1 class="number" data-number="4">+4</h1>
+        <span>{{ "translation.client-satisfaction" | translate }}</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Portfolio page -->
+<app-my-work></app-my-work>
+<!-- Testimonial -->
+
+<!-- Contact -->
+<div class="vg-page page-contact" id="contact">
+  <div class="container-fluid">
+    <div class="text-center wow fadeInUp">
+      <div class="badge badge-subhead">
+        {{ "translation.contact" | translate }}
+      </div>
+    </div>
+    <h1 class="text-center fw-normal wow fadeInUp">
+      {{ "translation.get-in-touch" | translate }}
+    </h1>
+
+    <form
+      class="vg-contact-form"
+      [formGroup]="formdata"
+      (ngSubmit)="onClickSubmit(formdata.value)"
+    >
+      <div class="form-row">
+        <div class="col-12 mt-3 wow fadeInUp">
+          <input
+            class="form-control has-feedback"
+            type="text"
+            name="name"
+            formControlName="name"
+            placeholder="{{ 'translation.your-name' | translate }}"
+            [ngClass]="{
+              'input-error':
+                formdata.controls['name'].invalid &&
+                (formdata.controls['name'].dirty ||
+                  formdata.controls['name'].touched)
+            }"
+          />
+          <div
+            *ngIf="
+              formdata.controls['name'].invalid &&
+              (formdata.controls['name'].dirty ||
+                formdata.controls['name'].touched)
+            "
+          >
+            <span style="color: red"> Name is required.</span>
+          </div>
+        </div>
+
+        <div class="col-6 mt-3 wow fadeInUp">
+          <input
+            class="form-control"
+            type="text"
+            name="email"
+            formControlName="email"
+            placeholder="{{ 'translation.email-address' | translate }}"
+            [ngClass]="{
+              'input-error':
+                formdata.controls['email'].invalid &&
+                (formdata.controls['email'].dirty ||
+                  formdata.controls['email'].touched)
+            }"
+          />
+          <div
+            *ngIf="
+              formdata.controls['email'].invalid &&
+              (formdata.controls['email'].dirty ||
+                formdata.controls['email'].touched)
+            "
+          >
+            <span style="color: red"> Email is required.</span>
+          </div>
+        </div>
+        <div class="col-6 mt-3 wow fadeInUp">
+          <input
+            class="form-control"
+            type="text"
+            name="subject"
+            formControlName="subject"
+            placeholder="{{ 'translation.subject' | translate }}"
+            [ngClass]="{
+              'input-error':
+                formdata.controls['subject'].invalid &&
+                (formdata.controls['subject'].dirty ||
+                  formdata.controls['subject'].touched)
+            }"
+          />
+          <div
+            *ngIf="
+              formdata.controls['subject'].invalid &&
+              (formdata.controls['subject'].dirty ||
+                formdata.controls['subject'].touched)
+            "
+          >
+            <span style="color: red"> Subject is required.</span>
+          </div>
+        </div>
+        <div class="col-12 mt-3 wow fadeInUp">
+          <textarea
+            class="form-control"
+            name="message"
+            formControlName="message"
+            rows="6"
+            placeholder="{{ 'translation.your-message' | translate }}"
+            [ngClass]="{
+              'input-error':
+                formdata.controls['message'].invalid &&
+                (formdata.controls['message'].dirty ||
+                  formdata.controls['message'].touched)
+            }"
+          ></textarea>
+          <div
+            *ngIf="
+              formdata.controls['message'].invalid &&
+              (formdata.controls['message'].dirty ||
+                formdata.controls['message'].touched)
+            "
+          >
+            <span style="color: red"> Message is required.</span>
+          </div>
+        </div>
+        <button
+          type="submit"
+          class="btn btn-theme mt-3 wow fadeInUp ml-1"
+          [disabled]="formdata.controls['message'].invalid"
+        >
+          {{ "translation.send-message" | translate }}
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+<!-- End Contact -->

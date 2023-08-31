@@ -1,0 +1,55 @@
+<div class="vg-page page-home" id="home" style="background-image: url(/assets/img/bg_image_1.jpg)">
+    <!-- Navbar -->
+    <div class="navbar navbar-expand-lg navbar-dark sticky" [ngClass]="isShow ? 'floating':''" [style.position]="isShow ? 'fixed':'absolute'" data-offset="500">
+      <div class="container">
+        <a href="" class="navbar-brand">B-Folio</a>
+        <button class="navbar-toggler" data-toggle="collapse" data-target="#main-navbar" aria-expanded="true">
+          <span class="ti-menu"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="main-navbar">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a [routerLink]="['landing']"  [fragment]="'home'" class="nav-link" data-animate="scrolling">{{'translation.home' | translate}}</a>
+            </li>
+            <li class="nav-item">
+              <a   [routerLink]="['landing']" [fragment]="'about'" class="nav-link" data-animate="scrolling">{{'translation.about' | translate}}</a>
+            </li>
+            <li class="nav-item">
+              <a   [routerLink]="['landing' ]" [fragment]="'portfolio'" class="nav-link" data-animate="scrolling">Portfolio</a>
+            </li>
+           
+            <li class="nav-item">
+              <a   [routerLink]="['landing' ]" [fragment]="'contact'" class="nav-link" data-animate="scrolling">{{'translation.contact' | translate}}</a>
+            </li>
+          </ul>
+          <ul class="nav ml-auto">
+            <li class="nav-item">
+              <button class="btn btn-fab btn-theme no-shadow" (click)="changeLanguage()">{{currentlanguage==='fr'? 'FR':'EN'}}</button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div> <!-- End Navbar -->
+   
+    <!-- Caption header -->
+    <div class="caption-header text-center wow zoomInDown" *ngIf="is_main">
+      <h5 class="fw-normal">{{'translation.welcome' | translate}}</h5>
+      <h1 class="fw-light mb-4">{{'translation.im' | translate}} <b class="fg-theme">Bilel</b> Daikhi</h1>
+      <div class="badge">{{'translation.occupation' | translate}}</div>
+    </div> <!-- End Caption header -->
+    <div class="floating-button"><span class="ti-mouse" *ngIf="is_main"></span></div>
+  
+  
+    <div class="caption-header text-center wow zoomInDown" *ngIf="is_project_details">
+     
+      <h1 class="fw-light mb-4"> <b class="fg-theme">{{'translation.project' | translate}} </b>{{'translation.details' | translate}}</h1>
+    
+    </div>
+    <div class="caption-header text-center wow zoomInDown" *ngIf="is_all_projects">
+     
+      <h1 class="fw-light mb-4"> <b class="fg-theme">{{'translation.all-my' | translate}} </b>{{'translation.work' | translate}}</h1>
+   
+    </div>
+  
+  </div>
+  
