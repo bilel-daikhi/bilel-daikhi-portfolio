@@ -11,7 +11,7 @@ import {share } from 'rxjs/operators';
 })
 export class HeaderComponent {
   activeFragment = this.activatedRoute.fragment.pipe(share()); 
-  currentFragment:string='home';
+ // currentFragment:string='home';
   is_project_details: boolean = false;
   is_all_projects: boolean = false;
   is_main: boolean = false;
@@ -47,7 +47,7 @@ export class HeaderComponent {
     });
     this.activatedRoute.fragment.subscribe( currentFragment =>{
       console.log('fragment is: '+currentFragment);
-      this.currentFragment!=currentFragment;
+     // this.currentFragment!=currentFragment;
  })
   }
 
