@@ -44,7 +44,7 @@
                 <li><span><i class="fa fa-user "></i>&nbsp;Created by:</span> {{selectedProject.developers}}</li>
                 <li><span><i class="fa fa-calendar"></i>&nbsp;Duration:</span> {{selectedProject.time}}</li>
                 <li><span  ><i class="fa fa-lightbulb"></i>&nbsp;Skills:</span>  <ng-container  *ngFor=" let item of selectedProject.languages; let i = index">   {{item}}{{i === selectedProject.languages.length - 1 ? '' : '/ '}}</ng-container> </li>
-                <li><span><i class="fa fa-link"></i>&nbsp;Client:</span> {{selectedProject.client}}</li>
+                <li *ngIf="false"><span><i class="fa fa-link"></i>&nbsp;Client:</span> {{selectedProject.client}}</li>
               </ul>
             </div>
           </div>
@@ -64,24 +64,31 @@
           <div class="fancy-title title-dotted-border">
             <h2>Project Info: </h2>
           </div>
-
-          <div class="col_half nobottommargin">
+        <div class="row ">
+          <div class="col-12 col-md-8   nobottommargin">
             <p *ngIf="currentlanguage === 'fr'" >{{selectedProject.description_fr}}</p>
             <p *ngIf="currentlanguage === 'en'" >{{selectedProject.description_en}}</p>
           </div>
          
-          <div class="col_half col_last nobottommargin" *ngIf="currentlanguage === 'fr'" >
-
+          <div class="col-6 col-md-4 nobottommargin wow fadeInRight" *ngIf="currentlanguage === 'fr'" >
+            <h2 class="card-title">Functionalities: </h2>
            
-            <p *ngFor="let funct of selectedProject.functionalities_fr">{{funct}}</p>
- 
+            
+            <ul class="theme-list">
+              <li class="p-3" *ngFor="let funct of selectedProject.functionalities_fr">
+                <b> {{funct}} </b>
+              </li>
+              
+            </ul>
           </div>
-          <div class="col_half col_last nobottommargin" *ngIf="currentlanguage === 'en'" >
+         
+          <div class="col-1 nobottommargin" *ngIf="currentlanguage === 'en'" >
 
            
             <p *ngFor="let funct of selectedProject.functionalities_en">{{funct}}</p>
  
           </div>
+        </div>
           <!-- Portfolio Single - Description End -->
 
         </div><!-- .portfolio-single-content end -->
@@ -91,8 +98,10 @@
         <div class="my-divider divider-center"><i class="icon-circle"></i></div> 
         <!-- Related Portfolio Items
         ============================================= -->
-        <h4>Related Projects:</h4>
-
+    
+        <div class="fancy-title title-dotted-border">
+          <h4>Related Projects: </h4>
+        </div>
         <owl-carousel-o [options]="customOptions">
           <ng-container *ngFor="let slide of dynamicSlides">
           

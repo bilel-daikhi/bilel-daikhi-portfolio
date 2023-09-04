@@ -15,7 +15,7 @@
   
       <div class="gridder my-3" >
         <div *ngFor="let project of selectedProjects; let i=index">
-          <a [routerLink] = "['/projects/project-details', project.id]" fragment="portfolio">
+          <a [routerLink] = "['/projects/project-details', project.id]" >
         <div class="grid-item wow zoomIn" ngClass="{{project.project_type}}" >
   
           <div class="img-place" >
