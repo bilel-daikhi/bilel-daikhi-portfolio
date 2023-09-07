@@ -9,7 +9,7 @@
 	<section id="page-title">
 
     <div class="container clearfix">
-      <h1>{{selectedProject.name}}</h1>
+      <h1 class="fg-theme">{{selectedProject.name}}</h1>
       <div id="portfolio-navigation">
         <a [routerLink]="['/projects/project-details',previousId]" *ngIf="previousId != -1"><i class="icon-angle-left"></i></a>
          <a routerLink="/projects/all-projects"><i class="icon-line-grid"></i></a>
@@ -62,7 +62,7 @@
           <!-- Portfolio Single - Description
           ============================================= -->
           <div class="fancy-title title-dotted-border">
-            <h2>Project Info: </h2>
+            <h2 class="fg-theme">Project Info: </h2>
           </div>
         <div class="row ">
           <div class="col-12 col-md-8   nobottommargin">
@@ -100,7 +100,7 @@
         ============================================= -->
     
         <div class="fancy-title title-dotted-border">
-          <h4>Related Projects: </h4>
+          <h4 class="fg-theme">Related Projects: </h4>
         </div>
         <owl-carousel-o [options]="customOptions">
           <ng-container *ngFor="let slide of dynamicSlides">
@@ -109,8 +109,8 @@
               <a [routerLink]="['/projects/project-details',slide.id]"> 
               <img [src]="slide.src" [alt]="slide.alt" [title]="slide.title" style="display: block; width: 80%;">
               <div class="portfolio-desc">
-                <h3> {{slide.title}} </h3>
-                <span>       {{ (slide.alt.length>60)? (slide.alt | slice:0:60)+' ...':(slide.alt) }} </span>
+                <h3 class="fg-theme"> {{slide.title}} </h3>
+                <span>- {{ (slide.alt.length>60)? (slide.alt | slice:0:60)+' ...':(slide.alt) }} </span>
               </div>
             </a>
             </ng-template>

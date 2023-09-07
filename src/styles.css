@@ -29,3 +29,13 @@ body {
 .center-text {
   text-align: center;
 }
+.owl-theme .owl-dots .owl-dot.active span,
+.owl-theme .owl-dots .owl-dot:hover span {
+  background: #007bff;
+}
+.dots-container .dot{
+  background: blue !important;
+   
+}
+ 
+ 

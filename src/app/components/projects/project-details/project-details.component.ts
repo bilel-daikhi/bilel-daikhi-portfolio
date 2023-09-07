@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
   
  
@@ -20,7 +20,7 @@ import { TranslateService } from '@ngx-translate/core';
 @Component({
   selector: 'app-project-details',
   templateUrl: './project-details.component.html',
-  styleUrls: ['./project-details.component.css']
+  styleUrls: ['./project-details.component.css'] 
 })
 export class ProjectDetailsComponent implements OnInit {
   nextId:number= -1;
@@ -81,7 +81,7 @@ export class ProjectDetailsComponent implements OnInit {
     carouselConfig: {
       maxWidth: '766px',
       maxHeight: '400px',
-      showArrows: true,
+      showArrows: false,
       objectFit: 'cover',
       keyboardEnable: true,
       modalGalleryEnable: true

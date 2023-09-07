@@ -2399,7 +2399,7 @@ body:not(.device-touch) #page-menu nav li a {
 		-o-transition: all .2s ease-in-out;
 		transition: all .2s ease-in-out;
 	}
-
+ 
 	#page-menu.dots-menu nav li div:after {
 		position: absolute;
 		content: '';
@@ -3293,8 +3293,10 @@ body:not(.stretched) .slider-parallax .slider-parallax-inner { left: auto; }
 	margin: 0;
 	top: auto;
 	bottom: 15px;
-}
+ 
 
+}
+ 
 .slider-element .owl-dots button {
 	width: 10px;
 	height: 10px;
@@ -13399,7 +13401,8 @@ body:not(.no-transition) #wrapper,
 
 
 .fancy-title.title-dotted-border {
-  background: url(src/assets/images/icons/dotted.png) repeat-x center;
+  background: url(src/assets/images/icons/dotted.png) repeat-x center; 
+
 }
 .fancy-title {
   position: relative;
@@ -13409,3 +13412,7 @@ body:not(.no-transition) #wrapper,
 
 	background-color: #000;
 }
+
+ 
+ 
+   
