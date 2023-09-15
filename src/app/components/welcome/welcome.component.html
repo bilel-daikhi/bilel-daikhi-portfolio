@@ -14,8 +14,8 @@
         <p class="text-muted">{{ "translation.introduction" | translate }}</p>
         <ul class="theme-list">
           <li>
-            <b>{{ "translation.from" | translate }}: </b
-            >{{ "translation.tunis-tunisia" | translate }}
+            <b>{{ "translation.nationality" | translate }}: </b
+            >{{ "translation.nationality-value" | translate }}
           </li>
           <li>
             <b>{{ "translation.live-in" | translate }}: </b
@@ -220,7 +220,7 @@
         <h2 class="fw-normal">{{ "translation.experience" | translate }}</h2>
         <ul class="timeline mt-4 pr-md-5">
           <li>
-            <div class="title">{{ getProjectById(12)?.time }}</div>
+            <div class="title">{{ getProjectById(11)?.time }}</div>
             <div class="details">
               <h5>{{ "translation.apex-engineer" | translate }}</h5>
               <small class="fg-theme">{{
@@ -228,24 +228,24 @@
               }}</small>
               <p
                 *ngIf="currentlanguage == 'fr'"
-                [innerHTML]="getProjectById(12)?.subName_fr"
+                [innerHTML]="getProjectById(11)?.subName_fr"
               ></p>
               <p
                 *ngIf="currentlanguage == 'en'"
-                [innerHTML]="getProjectById(12)?.subName_en"
+                [innerHTML]="getProjectById(11)?.subName_en"
               ></p>
             </div>
           </li>
           <li>
-            <div class="title">{{ getProjectById(11)?.time }}</div>
+            <div class="title">{{ getProjectById(10)?.time }}</div>
             <div class="details">
-              <h5>{{ getProjectById(11)?.name }}</h5>
+              <h5>{{ getProjectById(10)?.name }}</h5>
               <!--<small class="fg-theme"
                 >Client: {{ getProjectById(11)?.client }}</small
               >-->
               <small>Freelance</small>
               <p *ngIf="currentlanguage == 'fr'">
-                {{ getProjectById(11)?.subName_fr }}
+                {{ getProjectById(10)?.subName_fr }}
               </p>
               <p *ngIf="currentlanguage == 'en'">
                 {{ getProjectById(11)?.subName_en }}
@@ -575,7 +575,7 @@
                 formdata.controls['email'].touched)
             "
           >
-            <span style="color: red"> Email is required.</span>
+            <span style="color: red"> {{'translation.email-required'|translate}}</span>
           </div>
         </div>
         <div class="col-6 mt-3 wow fadeInUp">
@@ -599,7 +599,7 @@
                 formdata.controls['subject'].touched)
             "
           >
-            <span style="color: red"> Subject is required.</span>
+            <span style="color: red"> {{'translation.subject-required'|translate}}</span>
           </div>
         </div>
         <div class="col-12 mt-3 wow fadeInUp">
@@ -623,7 +623,7 @@
                 formdata.controls['message'].touched)
             "
           >
-            <span style="color: red"> Message is required.</span>
+            <span style="color: red"> {{'translation.message-required'|translate}}</span>
           </div>
         </div>
         <button

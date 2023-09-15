@@ -33,11 +33,11 @@
               "node_modules/ngx-owl-carousel-o/lib/styles/prebuilt-themes/owl.theme.default.min.css", 
               "node_modules/ti-icons/css/themify-icons.css",
               
-              "node_modules/animate.css/animate.css",
+             
               "node_modules/nice-select2/dist/css/nice-select2.css",
               "node_modules/@fancyapps/fancybox/dist/jquery.fancybox.css",
-              
-             
+              "src/assets/css/animate.css",
+             "src/assets/js/owl-carousel/owl.carousel.css",
               "src/styles.css",
               "src/assets/css/virtual.css",
               "src/assets/css/topbar.virtual.css"
@@ -49,7 +49,11 @@
               "node_modules/@fancyapps/fancybox/dist/jquery.fancybox.js",
               "node_modules/nice-select2/dist/js/nice-select2.js",
               "node_modules/jquery.animate-number/jquery.animateNumber.min.js",
-              "src/assets/js/topbar-virtual.js"
+              "src/assets/js/jquery.waypoints.min.js",
+              "src/assets/js/isotope.pkgd.min.js",
+              "src/assets/js/owl-carousel/owl.carousel.min.js",
+              "src/assets/js/topbar-virtual.js",
+              "src/assets/js/wow.min.js"
             ]
           },
           "configurations": {

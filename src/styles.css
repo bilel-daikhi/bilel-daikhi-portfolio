@@ -38,4 +38,32 @@ body {
    
 }
  
+.previews-container > .preview-inner-container > .active{
+  cursor: pointer;
+  object-fit: cover;
+  border: 2px solid #007bff !important;
+}
+
+.right-arrow-preview-image {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  display: inline-block;
+  border-width: 20px 0 20px 30px;
+  border-color: transparent transparent transparent #007bff; /* Blue color */
+
+}
+
+.left-arrow-preview-image{
+  
+  width: 0;
+  height: 0;
+  border-style: solid;
+  display: inline-block;
+  border-width: 20px 30px 20px 0;
+  border-color: transparent #007bff transparent transparent; /* Blue color */
+
+
+  
+}
  

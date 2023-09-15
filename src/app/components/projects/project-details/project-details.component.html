@@ -1,126 +1,187 @@
-<div class="hero hero-single route bg-image" style="background-image: url(assets/img/overlay-bg.jpg)">
-    <div class="overlay-mf"></div>
-    <div class="hero-content display-table">
-      <div class="table-cell">
-      
-         </div>
+<div
+  class="hero hero-single route bg-image"
+  style="background-image: url(assets/img/overlay-bg.jpg)"
+>
+  <div class="overlay-mf"></div>
+  <div class="hero-content display-table">
+    <div class="table-cell"></div>
+  </div>
+</div>
+
+<section id="page-title">
+  <div class="container clearfix">
+    <h1 class="fg-theme" *ngIf="selectedProject">{{ selectedProject.name }}</h1>
+    <h1 *ngIf="!projectFound && !isLoading" class="center">
+      {{ "translation.no-project-found" | translate }}
+    </h1>
+    <div id="portfolio-navigation">
+      <a
+        [routerLink]="['/projects/project-details', previousId]"
+        *ngIf="previousId != -1"
+        ><i class="icon-angle-left"></i
+      ></a>
+      <a routerLink="/projects/all-projects"><i class="icon-line-grid"></i></a>
+      <a
+        [routerLink]="['/projects/project-details', nextId]"
+        *ngIf="nextId != -1"
+        ><i class="icon-angle-right"></i
+      ></a>
     </div>
   </div>
-	<section id="page-title">
-
+</section>
+<!-- #page-title end -->
+<section id="content">
+  <div id="loader" class="text-center" *ngIf="isLoading"></div>
+  <div class="content-wrap" *ngIf="projectFound">
     <div class="container clearfix">
-      <h1 class="fg-theme">{{selectedProject.name}}</h1>
-      <div id="portfolio-navigation">
-        <a [routerLink]="['/projects/project-details',previousId]" *ngIf="previousId != -1"><i class="icon-angle-left"></i></a>
-         <a routerLink="/projects/all-projects"><i class="icon-line-grid"></i></a>
-         <a [routerLink]="['/projects/project-details',nextId]" *ngIf="nextId != -1"><i class="icon-angle-right"></i></a>
-        </div>
-    </div>
-
-  </section><!-- #page-title end -->
-  <section id="content">
-
-    <div class="content-wrap">
-
-      <div class="container clearfix">
-      
-
-        <!-- Portfolio Single Gallery
+      <!-- Portfolio Single Gallery
         ============================================= -->
-        <div class="col_full portfolio-single-image" *ngIf="imagesRect.length > 0">
-           
-            <ks-carousel [id]="114" [images]="imagesRect" [config]="LIBCONFIG114" (clickImage)="openModal($event, 114)">
-            
-            </ks-carousel>
-        </div><!-- .portfolio-single-image end -->
-    
-        <div class="col_one_third nobottommargin">
+      <div
+        class="col_full portfolio-single-image"
+        *ngIf="imagesRect.length > 0"
+      >
+        <ks-carousel
+          [id]="114"
+          [images]="imagesRect"
+          [config]="LIBCONFIG114"
+          (clickImage)="openModal($event, 114)"
+        >
+        </ks-carousel>
+      </div>
+      <!-- .portfolio-single-image end -->
 
-          <!-- Portfolio Single - Meta
+      <div class="col_one_third nobottommargin">
+        <!-- Portfolio Single - Meta
           ============================================= -->
-          <div class="card events-meta">
-            <div class="card-body">
-              <ul class="portfolio-meta nobottommargin">
-                <li><span><i class="fa fa-user "></i>&nbsp;Created by:</span> {{selectedProject.developers}}</li>
-                <li><span><i class="fa fa-calendar"></i>&nbsp;Duration:</span> {{selectedProject.time}}</li>
-                <li><span  ><i class="fa fa-lightbulb"></i>&nbsp;Skills:</span>  <ng-container  *ngFor=" let item of selectedProject.languages; let i = index">   {{item}}{{i === selectedProject.languages.length - 1 ? '' : '/ '}}</ng-container> </li>
-                <li *ngIf="false"><span><i class="fa fa-link"></i>&nbsp;Client:</span> {{selectedProject.client}}</li>
-              </ul>
-            </div>
-          </div>
-          <!-- Portfolio Single - Meta End -->
-
-        
-       
-
-        </div>
-
-        <!-- Portfolio Single Content
-        ============================================= -->
-        <div class="col_two_third portfolio-single-content col_last nobottommargin">
-
-          <!-- Portfolio Single - Description
-          ============================================= -->
-          <div class="fancy-title title-dotted-border">
-            <h2 class="fg-theme">Project Info: </h2>
-          </div>
-        <div class="row ">
-          <div class="col-12 col-md-8   nobottommargin">
-            <p *ngIf="currentlanguage === 'fr'" >{{selectedProject.description_fr}}</p>
-            <p *ngIf="currentlanguage === 'en'" >{{selectedProject.description_en}}</p>
-          </div>
-         
-          <div class="col-6 col-md-4 nobottommargin wow fadeInRight" *ngIf="currentlanguage === 'fr'" >
-            <h2 class="card-title">Functionalities: </h2>
-           
-            
-            <ul class="theme-list">
-              <li class="p-3" *ngFor="let funct of selectedProject.functionalities_fr">
-                <b> {{funct}} </b>
+        <div class="card events-meta">
+          <div class="card-body">
+            <ul class="portfolio-meta nobottommargin" *ngIf="selectedProject">
+              <li>
+                <span
+                  ><i class="fa fa-user"></i>&nbsp;{{
+                    "translation.created-by" | translate
+                  }}</span
+                >
+                {{ selectedProject.developers }}
               </li>
-              
+              <li>
+                <span><i class="fa fa-calendar"></i>&nbsp;Duration:</span>
+                {{ selectedProject.time }}
+              </li>
+              <li>
+                <span><i class="fa fa-lightbulb"></i>&nbsp;Skills:</span>
+                <ng-container
+                  *ngFor="let item of selectedProject.languages; let i = index"
+                >
+                  {{ item
+                  }}{{
+                    i === selectedProject.languages.length - 1 ? "" : "/ "
+                  }}</ng-container
+                >
+              </li>
+              <li *ngIf="false">
+                <span><i class="fa fa-link"></i>&nbsp;Client:</span>
+                {{ selectedProject.client }}
+              </li>
             </ul>
           </div>
-         
-          <div class="col-1 nobottommargin" *ngIf="currentlanguage === 'en'" >
-
-           
-            <p *ngFor="let funct of selectedProject.functionalities_en">{{funct}}</p>
- 
-          </div>
         </div>
-          <!-- Portfolio Single - Description End -->
-
-        </div><!-- .portfolio-single-content end -->
-
-        <div class="clear"></div>
-      
-        <div class="my-divider divider-center"><i class="icon-circle"></i></div> 
-        <!-- Related Portfolio Items
-        ============================================= -->
-    
-        <div class="fancy-title title-dotted-border">
-          <h4 class="fg-theme">Related Projects: </h4>
-        </div>
-        <owl-carousel-o [options]="customOptions">
-          <ng-container *ngFor="let slide of dynamicSlides">
-          
-            <ng-template carouselSlide [id]="slide.id">
-              <a [routerLink]="['/projects/project-details',slide.id]"> 
-              <img [src]="slide.src" [alt]="slide.alt" [title]="slide.title" style="display: block; width: 80%;">
-              <div class="portfolio-desc">
-                <h3 class="fg-theme"> {{slide.title}} </h3>
-                <span>- {{ (slide.alt.length>60)? (slide.alt | slice:0:60)+' ...':(slide.alt) }} </span>
-              </div>
-            </a>
-            </ng-template>
-         
-          </ng-container>
-        </owl-carousel-o>
+        <!-- Portfolio Single - Meta End -->
       </div>
 
+      <!-- Portfolio Single Content
+        ============================================= -->
+      <div
+        class="col_two_third portfolio-single-content col_last nobottommargin"
+      >
+        <!-- Portfolio Single - Description
+          ============================================= -->
+        <div class="fancy-title title-dotted-border">
+          <h2 class="fg-theme">{{ "translation.project-info" | translate }}</h2>
+        </div>
+        <div class="row">
+          <div class="col-12 col-md-8 nobottommargin" *ngIf="selectedProject">
+            <p *ngIf="currentlanguage === 'fr'">
+              {{ selectedProject.description_fr }}
+            </p>
+            <p *ngIf="currentlanguage === 'en'">
+              {{ selectedProject.description_en }}
+            </p>
+          </div>
+
+          <div
+            class="col-6 col-md-4 nobottommargin wow fadeInRight"
+            *ngIf="currentlanguage === 'fr'"
+          >
+            <h2 class="card-title">
+              {{ "translation.functionalities" | translate }}
+            </h2>
+
+            <ul class="theme-list" *ngIf="selectedProject">
+              <li
+                class="p-3"
+                *ngFor="let funct of selectedProject.functionalities_fr"
+              >
+                <b> {{ funct }} </b>
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-1 nobottommargin" *ngIf="currentlanguage === 'en'">
+            <p *ngFor="let funct of selectedProject.functionalities_en">
+              {{ funct }}
+            </p>
+          </div>
+        </div>
+        <!-- Portfolio Single - Description End -->
+      </div>
+      <!-- .portfolio-single-content end -->
+
+      <div class="clear"></div>
+
+      <div class="my-divider divider-center"><i class="icon-circle"></i></div>
+      <!-- Related Portfolio Items
+        ============================================= -->
+
+      <div class="fancy-title title-dotted-border">
+        <h4 class="fg-theme">
+          {{ "translation.related-projects" | translate }}
+        </h4>
+      </div>
+      <div
+        id="loader"
+        class="text-center"
+        *ngIf="isLoadingRelatedProjects"
+      ></div>
+      <owl-carousel-o
+        [options]="customOptions"
+        *ngIf="!isLoadingRelatedProjects"
+      >
+        <ng-container *ngFor="let slide of dynamicSlides">
+          <ng-template carouselSlide [id]="slide.id">
+            <a [routerLink]="['/projects/project-details', slide.id]">
+              <img
+                [src]="slide.src"
+                [alt]="slide.alt"
+                [title]="slide.title"
+                style="display: block; width: 80%; max-height: 120px"
+              />
+              <div class="portfolio-desc">
+                <h3 class="fg-theme">{{ slide.title }}</h3>
+                <span
+                  >-
+                  {{
+                    slide.alt.length > 60
+                      ? (slide.alt | slice : 0 : 60) + " ..."
+                      : slide.alt
+                  }}
+                </span>
+              </div>
+            </a>
+          </ng-template>
+        </ng-container>
+      </owl-carousel-o>
     </div>
-
-  </section><!-- #content end -->
-
-
+  </div>
+</section>
+<!-- #content end -->
