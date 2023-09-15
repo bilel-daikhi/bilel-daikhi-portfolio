@@ -14,6 +14,7 @@ import { ProjectsService } from 'src/app/services/projects.service';
   styleUrls: ['./welcome.component.css'],
 })
 export class WelcomeComponent {
+  isloading:boolean=true;
   formdata!: FormGroup;
   email!: FormControl;
   name!: FormControl;
@@ -29,9 +30,11 @@ export class WelcomeComponent {
   ) {}
 
   ngOnInit(): void {
-    this.projectService.getAllProjects().subscribe((projects) => {
+    this.isloading=true;
+    this.projectService.getAllProjects().subscribe({next:(projects) => {
+     this.isloading=false;
       this.projects = projects;
-    });
+    }});
     this.formdata = new FormGroup({
       email: new FormControl('', [Validators.required, Validators.email]),
       name: new FormControl('', Validators.required),

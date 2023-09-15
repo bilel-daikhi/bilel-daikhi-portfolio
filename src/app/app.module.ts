@@ -15,7 +15,7 @@ import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HeaderComponent } from './components/header/header.component';
 import { GalleryModule } from '@ks89/angular-modal-gallery'; 
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import 'hammerjs';  
 import 'mousetrap';  
 import { CarouselModule } from 'ngx-owl-carousel-o'; 
@@ -37,6 +37,7 @@ export function HttpLoaderFactory(http: HttpClient) {
   imports: [
     BrowserModule,
     AppRoutingModule,
+    BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
