@@ -112,13 +112,15 @@
 
           <div
             class="col-6 col-md-4 nobottommargin wow fadeInRight"
-            *ngIf="currentlanguage === 'fr'"
+            
           >
-            <h2 class="card-title">
-              {{ "translation.functionalities" | translate }}
+            <h2 class="card-title" *ngIf="currentlanguage === 'fr'">
+              Fonctionnalités:
             </h2>
-
-            <ul class="theme-list" *ngIf="selectedProject">
+            <h2 class="card-title" *ngIf="currentlanguage === 'en'">
+              Functionalities:
+            </h2>
+            <ul class="theme-list" *ngIf="selectedProject && currentlanguage === 'fr'">
               <li
                 class="p-3"
                 *ngFor="let funct of selectedProject.functionalities_fr"
@@ -126,13 +128,17 @@
                 <b> {{ funct }} </b>
               </li>
             </ul>
+            <ul class="theme-list" *ngIf="selectedProject && currentlanguage === 'en'">
+              <li
+                class="p-3"
+                *ngFor="let funct of selectedProject.functionalities_en"
+              >
+                <b> {{ funct }} </b>
+              </li>
+            </ul>
           </div>
-
-          <div class="col-1 nobottommargin" *ngIf="currentlanguage === 'en'">
-            <p *ngFor="let funct of selectedProject.functionalities_en">
-              {{ funct }}
-            </p>
-          </div>
+ 
+        
         </div>
         <!-- Portfolio Single - Description End -->
       </div>
