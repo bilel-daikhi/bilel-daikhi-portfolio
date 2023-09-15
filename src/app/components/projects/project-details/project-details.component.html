@@ -36,7 +36,8 @@
     <div class="container clearfix">
       <!-- Portfolio Single Gallery
         ============================================= -->
-      <div
+ 
+        <div
         class="col_full portfolio-single-image"
         *ngIf="imagesRect.length > 0"
       >
@@ -159,7 +160,7 @@
       >
         <ng-container *ngFor="let slide of dynamicSlides">
           <ng-template carouselSlide [id]="slide.id">
-            <a [routerLink]="['/projects/project-details', slide.id]">
+            <a [routerLink]="['/projects/project-details', +slide.id+1]">
               <img
                 [src]="slide.src"
                 [alt]="slide.alt"
