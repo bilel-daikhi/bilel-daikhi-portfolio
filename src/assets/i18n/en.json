@@ -83,6 +83,7 @@
 "tunis-tunisia":"Tunis, Tunisia",
 "subject-required":"Subject is required!",
 "email-required":"Email is required.",
-"message-required":" Message is required!"
+"message-required":" Message is required!",
+"name-required":"Name is required!"
 }
 }
