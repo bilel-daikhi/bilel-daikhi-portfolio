@@ -11,7 +11,10 @@
         <h5 class="fg-theme mb-3">
           {{ "translation.occupation" | translate }}
         </h5>
-        <p class="text-muted">{{ "translation.introduction" | translate }}</p>
+        <p class="text-muted" >
+          
+          {{'translation.introduction' | translate}}
+        </p>
         <ul class="theme-list">
           <li>
             <b>{{ "translation.nationality" | translate }}: </b
@@ -253,18 +256,18 @@
             </div>
           </li>
           <li>
-            <div class="title">{{ getProjectById(4)?.time }}</div>
+            <div class="title">{{ getProjectById(12)?.time }}</div>
             <div class="details">
-              <h5>{{ getProjectById(4)?.name }}</h5>
+              <h5>{{ getProjectById(12)?.name }}</h5>
             <!--<small class="fg-theme"
                 >Client: {{ getProjectById(2)?.client }}</small
               >-->
               <small>Freelance</small>
               <p *ngIf="currentlanguage == 'fr'">
-                {{ getProjectById(4)?.subName_fr  }}
+                {{ getProjectById(12)?.subName_fr  }}
               </p>
               <p *ngIf="currentlanguage == 'en'">
-                {{ getProjectById(4)?.subName_en }}
+                {{ getProjectById(12)?.subName_en }}
               </p>
             </div>
           </li>
@@ -629,7 +632,7 @@
         <button
           type="submit"
           class="btn btn-theme mt-3 wow fadeInUp ml-1"
-          [disabled]="formdata.controls['message'].invalid"
+          [disabled]="formdata.invalid"
         >
           {{ "translation.send-message" | translate }}
         </button>

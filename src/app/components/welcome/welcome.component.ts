@@ -39,7 +39,7 @@ export class WelcomeComponent {
       email: new FormControl('', [Validators.required, Validators.email]),
       name: new FormControl('', Validators.required),
       subject: new FormControl('', Validators.required),
-      message: new FormControl('', Validators.required),
+      message: new FormControl('', Validators.required)
     });
     this.currentlanguage = this.translateService.getBrowserLang();
     this.translateService.onLangChange.subscribe((lan) => {
@@ -51,7 +51,8 @@ export class WelcomeComponent {
     this.name= data.name;
     this.subject= data.subject;
     this.message= data.message;*/
-    console.log('email: ' + this.email);
+    console.log('is form valide: ' + this.formdata.valid);
+    if(this.formdata.valid){
     let contact: Contact = {
       email: data.email,
       id: -1,
@@ -74,6 +75,12 @@ export class WelcomeComponent {
         });
       },
     });
+  }else{
+    this.notificationService.sendMessage({
+      message: 'Field(s) is required!',
+      type: NotificationType.error,
+    });
+  }
   }
   proj: Project | undefined;
   getProjectById(selectedId: number): Project | undefined {
