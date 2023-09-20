@@ -7,23 +7,24 @@
           <span class="ti-menu"></span>
         </button>
         <div class="collapse navbar-collapse" id="main-navbar">
+          <p style="color: aliceblue;">{{(activeFragment | async)}}</p>
           <ul class="navbar-nav ml-auto">
-            <li class="nav-item" [class.active]="(activeFragment | async)==='home' ? 'active':''">
+            <li class="nav-item" [class.active2]="(activeFragment | async)==='home'">
        
-              <a [routerLink]="['/']"  [fragment]=" 'home'" class="nav-link" data-animate="scrolling">{{'translation.home' | translate}}</a>
+              <a [routerLink]="['/']"  fragment="home" class="nav-link active " data-animate="scrolling"  >{{'translation.home' | translate}}</a>
             </li>
-            <li class="nav-item" [class.active]="(activeFragment | async)==='about' ? 'active':''">
+            <li class="nav-item" [class.active2]="(activeFragment | async)==='about'">
           
-              <a   [routerLink]="['/']" [fragment]="'about'"  class="nav-link" data-animate="scrolling">{{'translation.about' | translate}}</a>
+              <a   [routerLink]="['/']" fragment="about"  class="nav-link active" data-animate="scrolling">{{'translation.about' | translate}}</a>
             </li>
-            <li class="nav-item" [class.active]="(activeFragment | async)==='portfolio' ? 'active':''" >
+            <li class="nav-item" [class.active2]="(activeFragment | async)==='portfolio'" >
         
-              <a   [routerLink]="['/' ]" [fragment]="'portfolio'" class="nav-link" data-animate="scrolling">Portfolio</a>
+              <a   [routerLink]="['/' ]" fragment="portfolio" class="nav-link active" data-animate="scrolling">Portfolio</a>
             </li>
            
-            <li class="nav-item" [class]="(activeFragment | async)==='contact'? 'active':''">
+            <li class="nav-item" [class.active2]="(activeFragment | async)==='contact'">
               
-              <a   [routerLink]="['/' ]" [fragment]="'contact'" class="nav-link" data-animate="scrolling">{{'translation.contact' | translate}}</a>
+              <a   [routerLink]="['/' ]" fragment="contact" class="nav-link active" data-animate="scrolling">{{'translation.contact' | translate}}</a>
             </li>
           </ul>
         
