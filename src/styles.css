@@ -45,6 +45,7 @@ body {
 }
 
 .right-arrow-preview-image {
+
   width: 0;
   height: 0;
   border-style: solid;
@@ -53,7 +54,14 @@ body {
   border-color: transparent transparent transparent #007bff; /* Blue color */
 
 }
-
+.nav-right{
+  z-index: 70 !important;
+  position: relative !important;
+}
+.nav-left{
+  z-index: 70 !important;
+  position: relative !important;
+}
 .left-arrow-preview-image{
   
   width: 0;
