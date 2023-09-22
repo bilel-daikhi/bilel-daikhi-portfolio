@@ -80,13 +80,15 @@ export class HeaderComponent implements OnInit {
     } else {
       this.isShow = false;
     }
-
-    
-    console.log('currentLink: '+this.currentLink.startsWith('/projects/project-details'))
-    if(!this.currentLink.startsWith('/projects/project-details')){
+ 
+    if(!this.currentLink.startsWith('/projects')){
     if (this.isVisible(document.querySelector('#home') as HTMLElement)) {
       this.activeFragment$.next('home'); 
     }  else if (this.isVisible(document.querySelector('#about') as HTMLElement)) {
+      console.log('about is visible!')
+      this.activeFragment$.next('about'); 
+    } else if (this.isVisible(document.querySelector('#about-occupation') as HTMLElement)) {
+      console.log('about is visible!')
       this.activeFragment$.next('about'); 
     } else if (this.isVisible(document.querySelector('#portfolio') as HTMLElement)) {
       this.activeFragment$.next('portfolio'); 
