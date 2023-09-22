@@ -5,6 +5,12 @@
         <div class="badge badge-subhead">Portfolio</div>
       </div>
       <h1 class="text-center fw-normal wow fadeInUp">{{'translation.all-my-work' | translate}}</h1>
+      <div id="loading" class="loader" *ngIf="isLoading">
+        <div id="bar-1" class="bar"></div>
+        <div id="bar-2" class="bar"></div>
+        <div id="bar-3" class="bar"></div>
+    </div>
+    <div *ngIf="!isLoading">
       <div class="filterable-button py-3 wow fadeInUp" data-toggle="selected">
         <button class="btn btn-theme-outline " [ngClass]="selected_project_type=='*' ? 'selected':''"   (click)="filter_projects('*')">{{'translation.all' | translate}}</button>
         <button class="btn btn-theme-outline"  [ngClass]="selected_project_type=='desktop' ? 'selected':''" (click)="filter_projects('desktop')">Desktop</button>
@@ -34,7 +40,7 @@
       </div>
       <div *ngIf="selectedProjects.length==0" class="container"><h3 class="text-center fw-normal wow fadeInUp" style="color: brown;"> {{'translation.no-projects-were-found' | translate}}</h3> </div>
       </div> <!-- End gridder -->
-  
+    </div>
     </div>
   </div> <!-- End Portfolio page -->
   
