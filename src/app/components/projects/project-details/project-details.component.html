@@ -13,7 +13,7 @@
   <div class="container clearfix">
     <h1 class="fg-theme" *ngIf="selectedProject">{{ selectedProject.name }}</h1>
     <h1 *ngIf="!projectFound && !isLoading" class="center">
-      {{ "translation.no-project-found" | translate }}
+      {{ "translation.no-project-found" | translate }}  
     </h1>
     <div id="portfolio-navigation">
       <a
@@ -39,7 +39,7 @@
         ============================================= -->
  
         <div
-        class="col_full portfolio-single-image"
+        class="col_full portfolio-single-image wow fadeInRight"
         *ngIf="imagesRect.length > 0"
       >
         <ks-carousel
@@ -52,7 +52,7 @@
       </div>
       <!-- .portfolio-single-image end -->
 
-      <div class="col_one_third nobottommargin">
+      <div class="col_one_third nobottommargin  wow fadeInLeft">
         <!-- Portfolio Single - Meta
           ============================================= -->
         <div class="card events-meta">
@@ -102,7 +102,7 @@
           <h2 class="fg-theme">{{ "translation.project-info" | translate }}</h2>
         </div>
         <div class="row">
-          <div class="col-12 col-md-8 nobottommargin" *ngIf="selectedProject">
+          <div class="col-12 col-md-8 nobottommargin wow fadeInUp" *ngIf="selectedProject">
             <p *ngIf="currentlanguage === 'fr'">
               {{ selectedProject.description_fr }}
             </p>
@@ -166,7 +166,8 @@
         *ngIf="!isLoadingRelatedProjects"
       >
         <ng-container *ngFor="let slide of dynamicSlides">
-          <ng-template carouselSlide [id]="slide.id">
+          <ng-template carouselSlide [id]="slide.id" >
+          <div class="wow fadeInRight">
             <a [routerLink]="['/projects/project-details', +slide.projectId]">
               <img
                 [src]="slide.src"
@@ -186,6 +187,7 @@
                 </span>
               </div>
             </a>
+          </div>
           </ng-template>
         </ng-container>
       </owl-carousel-o>
