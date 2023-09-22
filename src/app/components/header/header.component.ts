@@ -32,12 +32,13 @@ export class HeaderComponent implements OnInit {
     this.router.events.subscribe((value) => { 
       this.currentLink=this.router.url.toString();
       if (this.router.url.toString().startsWith('/projects/all-projects')) {
-  
+        this.activeFragment$.next('portfolio'); 
         this.is_all_projects = true;
       } else {
         this.is_all_projects = false;
       }
       if (this.router.url.toString().startsWith('/projects/project-details')) {
+        this.activeFragment$.next('portfolio'); 
         this.is_project_details = true;
       } else {
         this.is_project_details = false;
