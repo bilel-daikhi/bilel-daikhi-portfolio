@@ -11,7 +11,7 @@ import { ProjectImage } from 'src/app/model/image';
 })
 export class AllProjectsComponent {
   selected_project_type: string = '*';
- 
+  isLoading:boolean=false;
   projects: Project[] = [];
   selectedProjects: Project[] = [];
   selectedProject!:Project;
@@ -22,15 +22,18 @@ constructor(private projectService:ProjectsService,public translateService:Trans
 sampleId!: string;
 currentlanguage:any;
 ngOnInit(): void {
- 
+ this.isLoading=true;
   //this.loadImages();
   this.projectService.getAllProjects().pipe(  map(items => 
     items.filter(item => item.project_type[0] != 'assist' && item.project_type[0] != 'company'))).subscribe({
     next:(result:Project[])=>{
       this.projects.push(...result);
       this.selectedProjects.push(...result);
+      this.isLoading=false;
     },
-    error:(error)=>{}
+    error:(error)=>{
+      this.isLoading=false;
+    }
   })
   this.projects.push();
   this.sampleId = 'sampleId';
