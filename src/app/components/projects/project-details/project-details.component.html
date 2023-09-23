@@ -32,7 +32,13 @@
 </section>
 <!-- #page-title end -->
 <section id="content">
-  <div id="loader" class="text-center" *ngIf="isLoading"></div>
+ 
+  <div id="loading" class="loader" *ngIf="isLoading">
+    <div id="bar-1" class="bar"></div>
+    <div id="bar-2" class="bar"></div>
+    <div id="bar-3" class="bar"></div>
+</div>
+
   <div class="content-wrap" *ngIf="projectFound">
     <div class="container clearfix">
       <!-- Portfolio Single Gallery
@@ -156,11 +162,13 @@
           {{ "translation.related-projects" | translate }}
         </h4>
       </div>
-      <div
-        id="loader"
-        class="text-center"
-        *ngIf="isLoadingRelatedProjects"
-      ></div>
+    
+      <div id="loading" class="loader" *ngIf="isLoadingRelatedProjects">
+        <div id="bar-1" class="bar"></div>
+        <div id="bar-2" class="bar"></div>
+        <div id="bar-3" class="bar"></div>
+    </div>
+   
       <owl-carousel-o
         [options]="customOptions"
         *ngIf="!isLoadingRelatedProjects"

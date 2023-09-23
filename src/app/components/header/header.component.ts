@@ -101,6 +101,9 @@ export class HeaderComponent implements OnInit {
   }
 
   } 
+  isSelected(fragment:string){ 
+    this.activeFragment$.next(fragment); 
+  }
   changeLanguage() {
     if (this.currentlanguage == 'en') {
       this.currentlanguage = 'fr';
