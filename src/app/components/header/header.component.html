@@ -1,29 +1,29 @@
 <div class="vg-page page-home" id="home" style="background-image: url(/assets/img/bg_image_1.jpg)">
     <!-- Navbar -->
-    <div class="navbar navbar-expand-lg navbar-dark sticky" [ngClass]="isShow ? 'floating':''" [style.position]="isShow ? 'fixed':'absolute'" data-offset="500">
+    <div class="navbar navbar-expand-lg navbar-dark sticky"    data-offset="500">
       <div class="container">
-        <a  [routerLink]="['/landing#home']" routerLinkActive="router-link-active"  class="navbar-brand">B-Folio</a>
+        <a  [routerLink]="['/landing#home']" routerLinkActive="active2"  class="navbar-brand">B-Folio</a>
         <button class="navbar-toggler" data-toggle="collapse" data-target="#main-navbar" aria-expanded="true">
           <span class="ti-menu"></span>
         </button>
         <div class="collapse navbar-collapse" id="main-navbar"> 
           <ul class="navbar-nav ml-auto">
-            <li class="nav-item" [class.active2]="(activeFragment$ | async) ==='home'">
+            <li class="nav-item" [class.active2]="(activeFragment$ | async) ==='home'" >
        
-              <a routerLink="/landing"  fragment="home" class="nav-link active scroll"   >{{'translation.home' | translate}}</a>
+              <a routerLink="/landing"  fragment="home"   (click)="isSelected('portfolio')"   class="nav-link active scroll"   >{{'translation.home' | translate}}</a>
             </li>
             <li class="nav-item" [class.active2]="(activeFragment$ | async)==='about'">
           
-              <a   routerLink="/landing" fragment="about"  class="nav-link active scroll">{{'translation.about' | translate}}</a>
+              <a   routerLink="/landing" fragment="about" (click)="isSelected('about')"     class="nav-link active scroll">{{'translation.about' | translate}}</a>
             </li>
             <li class="nav-item" [class.active2]="(activeFragment$ | async)==='portfolio'" >
         
-              <a   routerLink="/landing" fragment="portfolio" class="nav-link active scroll">Portfolio</a>
+              <a  routerLink="/landing" fragment="portfolio"   (click)="isSelected('portfolio')"    class="nav-link active scroll">Portfolio</a>
             </li>
            
             <li class="nav-item" [class.active2]="(activeFragment$ | async)==='contact'">
               
-              <a   routerLink="/landing" fragment="contact" class="nav-link active scroll">{{'translation.contact' | translate}}</a>
+              <a   routerLink="/landing" fragment="contact"  (click)="isSelected('portfolio')"    class="nav-link active scroll">{{'translation.contact' | translate}}</a>
             </li>
           </ul>
         
@@ -47,7 +47,8 @@
   
     <div class="caption-header text-center wow zoomInDown" *ngIf="is_project_details">
      
-      <h1 class="fw-light mb-4"> <b class="fg-theme">{{'translation.project' | translate}} </b>{{'translation.details' | translate}}</h1>
+      <h1 class="fw-light mb-4" *ngIf="currentlanguage==='fr'"> <b class="fg-theme" >Détails de </b>projet</h1>
+      <h1 class="fw-light mb-4" *ngIf="currentlanguage==='en'"> <b class="fg-theme" >Project </b>details</h1>
     
     </div>
     <div class="caption-header text-center wow zoomInDown" *ngIf="is_all_projects">
