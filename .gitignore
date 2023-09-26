@@ -4,9 +4,9 @@ src/environments/environment.ts
 src/environments/environment.prod.ts
 .env
 /public
-.vscode
+/.vscode
 .editorconfig
-.firebase
+/.firebase
 # Compiled output
 /dist
 /tmp
