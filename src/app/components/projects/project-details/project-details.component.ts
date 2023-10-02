@@ -21,11 +21,11 @@ import { TranslateService } from '@ngx-translate/core';
   styleUrls: ['./project-details.component.css'],
 })
 export class ProjectDetailsComponent implements OnInit {
-  isLoading:boolean=true;
-  isLoadingRelatedProjects:boolean=true;
+  isLoading: boolean = true;
+  isLoadingRelatedProjects: boolean = true;
   nextId: number = -1;
   previousId: number = -1;
-  projectFound:boolean=false;
+  projectFound: boolean = false;
   currentlanguage: any;
 
   dynamicSlides: RelatedModel[] = [];
@@ -89,8 +89,8 @@ export class ProjectDetailsComponent implements OnInit {
   };
 
   ngOnInit(): void {
-    this.isLoading=true;
-    this.isLoadingRelatedProjects=true;
+    this.isLoading = true;
+    this.isLoadingRelatedProjects = true;
     this._activatedRoute.params.subscribe((params) => {
       this.project_id = +params['id'];
       this.nextId = -1;
@@ -107,14 +107,12 @@ export class ProjectDetailsComponent implements OnInit {
   initialiseState() {
     this.imagesRect = new Array();
     this.dynamicSlides = new Array();
-    this.projectService
-      .getSelectedProject(this.project_id)
-      .subscribe({  
-        next: (rprojects) => {
-          this.isLoading=false;
-          if(rprojects!=undefined){
-            this.projectFound=true;
-            this.selectedProject = rprojects!;
+    this.projectService.getSelectedProject(this.project_id).subscribe({
+      next: (rprojects) => {
+        this.isLoading = false;
+        if (rprojects != undefined) {
+          this.projectFound = true;
+          this.selectedProject = rprojects!;
           this.projectImages = rprojects!.images;
           this.projectImages.forEach(
             (
@@ -136,11 +134,11 @@ export class ProjectDetailsComponent implements OnInit {
               );
               // this.images.push(new_image);
               this.imagesRect = [...this.imagesRect, new_image];
-             // console.log('index: ' + index);
+              // console.log('index: ' + index);
               // this.addRandomImage();
             }
           );
-  
+
           this.projectService
             .getAllProjects()
             .pipe(
@@ -152,7 +150,7 @@ export class ProjectDetailsComponent implements OnInit {
               )
             )
             .subscribe((projects) => {
-              this.isLoadingRelatedProjects=false;
+              this.isLoadingRelatedProjects = false;
               this.dynamicSlides = new Array();
               projects.forEach((sim, index, array: Project[]) => {
                 console.log(
@@ -164,12 +162,12 @@ export class ProjectDetailsComponent implements OnInit {
                   if (array[index - 1]) this.previousId = array[index - 1].id;
                   else this.previousId = -1;
                 }
-  
+
                 if (this.project_id != sim.id) {
                   let landing: ProjectImage = sim.images.filter(
                     (value) => value.landing == 1
                   )[0];
-  
+
                   this.dynamicSlides = [
                     ...this.dynamicSlides,
                     {
@@ -182,23 +180,19 @@ export class ProjectDetailsComponent implements OnInit {
                   ];
                 }
               });
-  
+
               this.similaireProjects = [...projects];
               console.log(
                 'this.similaireProjects :   ' + this.similaireProjects.length
               );
             });
-  
-   
-   
-          }else{
-            this.projectFound=false;
-          }
-          
-        },  
-        error: err => console.error('An error occurred :', err),  
-        complete: () => console.log('There are no more action happen.')  
-      });
+        } else {
+          this.projectFound = false;
+        }
+      },
+      error: (err) => console.error('An error occurred :', err),
+      complete: () => console.log('There are no more action happen.'),
+    });
   }
   openModal(imageIndex: number, id: number): void {
     const imageToShow: Image = this.imagesRect[imageIndex];
@@ -208,7 +202,6 @@ export class ProjectDetailsComponent implements OnInit {
       currentImage: imageToShow,
     } as ModalGalleryConfig) as ModalGalleryRef;
   }
-
 }
 
 export interface RelatedModel {

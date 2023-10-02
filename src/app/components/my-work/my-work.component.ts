@@ -10,8 +10,8 @@ import { ProjectImage } from 'src/app/model/image';
   styleUrls: ['./my-work.component.css'],
 })
 export class MyWorkComponent {
-  isLoading:boolean=true;
- 
+  isLoading: boolean = true;
+
   projects: Project[] = [];
   selectedProjects: Project[] = [];
   selectedProject!: Project;
@@ -27,8 +27,7 @@ export class MyWorkComponent {
   ) {}
 
   ngOnInit(): void {
-
-    this.isLoading=true;
+    this.isLoading = true;
     //this.loadImages();
     this.projectService
       .getAllProjects()
@@ -43,12 +42,12 @@ export class MyWorkComponent {
       )
       .subscribe({
         next: (result: Project[]) => {
-          this.isLoading=false;
+          this.isLoading = false;
           this.projects.push(...result); //.slice(0, 6)
           this.selectedProjects.push(...result.slice(0, 6));
         },
         error: (error) => {
-          this.isLoading=false;
+          this.isLoading = false;
         },
       });
     this.projects.push();

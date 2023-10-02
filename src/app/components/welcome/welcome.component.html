@@ -1,4 +1,3 @@
-
 <!-- about fragment -->
 <div class="vg-page page-about" id="about">
   <div class="container py-5" id="about-occupation">
@@ -13,10 +12,10 @@
         <h5 class="fg-theme mb-3">
           {{ "translation.occupation" | translate }}
         </h5>
-        <p class="text-muted" >
-          
-          {{'translation.introduction' | translate}}
-        </p>
+   
+        <div class="text-muted">
+          {{ "translation.introduction" | translate }}
+        </div>
         <ul class="theme-list">
           <li>
             <b>{{ "translation.nationality" | translate }}: </b
@@ -250,7 +249,7 @@
               >-->
               <small>Freelance</small>
               <p *ngIf="currentlanguage == 'fr'">
-                {{ getProjectById(10)?.subName_fr  }}
+                {{ getProjectById(10)?.subName_fr }}
               </p>
               <p *ngIf="currentlanguage == 'en'">
                 {{ getProjectById(10)?.subName_en }}
@@ -261,12 +260,12 @@
             <div class="title">{{ getProjectById(12)?.time }}</div>
             <div class="details">
               <h5>{{ getProjectById(12)?.name }}</h5>
-            <!--<small class="fg-theme"
+              <!--<small class="fg-theme"
                 >Client: {{ getProjectById(2)?.client }}</small
               >-->
               <small>Freelance</small>
               <p *ngIf="currentlanguage == 'fr'">
-                {{ getProjectById(12)?.subName_fr  }}
+                {{ getProjectById(12)?.subName_fr }}
               </p>
               <p *ngIf="currentlanguage == 'en'">
                 {{ getProjectById(12)?.subName_en }}
@@ -555,7 +554,9 @@
                 formdata.controls['name'].touched)
             "
           >
-            <span style="color: red"> {{'translation.name-required'|translate}}</span>
+            <span style="color: red">
+              {{ "translation.name-required" | translate }}</span
+            >
           </div>
         </div>
 
@@ -580,7 +581,9 @@
                 formdata.controls['email'].touched)
             "
           >
-            <span style="color: red"> {{'translation.email-required'|translate}}</span>
+            <span style="color: red">
+              {{ "translation.email-required" | translate }}</span
+            >
           </div>
         </div>
         <div class="col-6 mt-3 wow fadeInUp">
@@ -604,7 +607,9 @@
                 formdata.controls['subject'].touched)
             "
           >
-            <span style="color: red"> {{'translation.subject-required'|translate}}</span>
+            <span style="color: red">
+              {{ "translation.subject-required" | translate }}</span
+            >
           </div>
         </div>
         <div class="col-12 mt-3 wow fadeInUp">
@@ -628,7 +633,9 @@
                 formdata.controls['message'].touched)
             "
           >
-            <span style="color: red"> {{'translation.message-required'|translate}}</span>
+            <span style="color: red">
+              {{ "translation.message-required" | translate }}</span
+            >
           </div>
         </div>
         <button
