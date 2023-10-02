@@ -14,7 +14,7 @@ import { ProjectsService } from 'src/app/services/projects.service';
   styleUrls: ['./welcome.component.css'],
 })
 export class WelcomeComponent {
-  isloading:boolean=true;
+  isloading: boolean = true;
   formdata!: FormGroup;
   email!: FormControl;
   name!: FormControl;
@@ -30,16 +30,18 @@ export class WelcomeComponent {
   ) {}
 
   ngOnInit(): void {
-    this.isloading=true;
-    this.projectService.getAllProjects().subscribe({next:(projects) => {
-     this.isloading=false;
-      this.projects = projects;
-    }});
+    this.isloading = true;
+    this.projectService.getAllProjects().subscribe({
+      next: (projects) => {
+        this.isloading = false;
+        this.projects = projects;
+      },
+    });
     this.formdata = new FormGroup({
       email: new FormControl('', [Validators.required, Validators.email]),
       name: new FormControl('', Validators.required),
       subject: new FormControl('', Validators.required),
-      message: new FormControl('', Validators.required)
+      message: new FormControl('', Validators.required),
     });
     this.currentlanguage = this.translateService.getBrowserLang();
     this.translateService.onLangChange.subscribe((lan) => {
@@ -52,35 +54,35 @@ export class WelcomeComponent {
     this.subject= data.subject;
     this.message= data.message;*/
     console.log('is form valide: ' + this.formdata.valid);
-    if(this.formdata.valid){
-    let contact: Contact = {
-      email: data.email,
-      id: -1,
-      message: data.message,
-      name: data.name,
-      subject: data.subject,
-    };
-    this.contactService.createContact(contact).subscribe({
-      next: () => {
-        this.notificationService.sendMessage({
-          message: 'message was sent successfuly!',
-          type: NotificationType.success,
-        });
-        this.formdata.reset();
-      },
-      error: () => {
-        this.notificationService.sendMessage({
-          message: 'something wrong happened!',
-          type: NotificationType.error,
-        });
-      },
-    });
-  }else{
-    this.notificationService.sendMessage({
-      message: 'Field(s) is required!',
-      type: NotificationType.error,
-    });
-  }
+    if (this.formdata.valid) {
+      let contact: Contact = {
+        email: data.email,
+        id: -1,
+        message: data.message,
+        name: data.name,
+        subject: data.subject,
+      };
+      this.contactService.createContact(contact).subscribe({
+        next: () => {
+          this.notificationService.sendMessage({
+            message: 'message was sent successfuly!',
+            type: NotificationType.success,
+          });
+          this.formdata.reset();
+        },
+        error: () => {
+          this.notificationService.sendMessage({
+            message: 'something wrong happened!',
+            type: NotificationType.error,
+          });
+        },
+      });
+    } else {
+      this.notificationService.sendMessage({
+        message: 'Field(s) is required!',
+        type: NotificationType.error,
+      });
+    }
   }
   proj: Project | undefined;
   getProjectById(selectedId: number): Project | undefined {

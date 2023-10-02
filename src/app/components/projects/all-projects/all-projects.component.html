@@ -1,51 +1,89 @@
- 
 <div class="vg-page page-portfolio" id="portfolio">
-    <div class="container">
-      <div class="text-center wow fadeInUp">
-        <div class="badge badge-subhead">Portfolio</div>
-      </div>
-      <h1 class="text-center fw-normal wow fadeInUp">{{'translation.all-my-work' | translate}}</h1>
-      <div id="loading" class="loader" *ngIf="isLoading">
-        <div id="bar-1" class="bar"></div>
-        <div id="bar-2" class="bar"></div>
-        <div id="bar-3" class="bar"></div>
+  <div class="container">
+    <div class="text-center wow fadeInUp">
+      <div class="badge badge-subhead">Portfolio</div>
+    </div>
+    <h1 class="text-center fw-normal wow fadeInUp">
+      {{ "translation.all-my-work" | translate }}
+    </h1>
+    <div id="loading" class="loader" *ngIf="isLoading">
+      <div id="bar-1" class="bar"></div>
+      <div id="bar-2" class="bar"></div>
+      <div id="bar-3" class="bar"></div>
     </div>
     <div *ngIf="!isLoading">
       <div class="filterable-button py-3 wow fadeInUp" data-toggle="selected">
-        <button class="btn btn-theme-outline " [ngClass]="selected_project_type=='*' ? 'selected':''"   (click)="filter_projects('*')">{{'translation.all' | translate}}</button>
-        <button class="btn btn-theme-outline"  [ngClass]="selected_project_type=='desktop' ? 'selected':''" (click)="filter_projects('desktop')">Desktop</button>
-        <button class="btn btn-theme-outline"   [ngClass]="selected_project_type=='web' ? 'selected':''" (click)="filter_projects('web')">Web application</button>
-        <button class="btn btn-theme-outline"   [ngClass]="selected_project_type=='mobile' ? 'selected':''" (click)="filter_projects('mobile')">Mobile</button>
-        <button class="btn btn-theme-outline"  [ngClass]="selected_project_type=='webservices' ? 'selected':''" (click)="filter_projects('webservices')">Web Service</button>
+        <button
+          class="btn btn-theme-outline"
+          [ngClass]="selected_project_type == '*' ? 'selected' : ''"
+          (click)="filter_projects('*')"
+        >
+          {{ "translation.all" | translate }}
+        </button>
+        <button
+          class="btn btn-theme-outline"
+          [ngClass]="selected_project_type == 'desktop' ? 'selected' : ''"
+          (click)="filter_projects('desktop')"
+        >
+          Desktop
+        </button>
+        <button
+          class="btn btn-theme-outline"
+          [ngClass]="selected_project_type == 'web' ? 'selected' : ''"
+          (click)="filter_projects('web')"
+        >
+          Web application
+        </button>
+        <button
+          class="btn btn-theme-outline"
+          [ngClass]="selected_project_type == 'mobile' ? 'selected' : ''"
+          (click)="filter_projects('mobile')"
+        >
+          Mobile
+        </button>
+        <button
+          class="btn btn-theme-outline"
+          [ngClass]="selected_project_type == 'webservices' ? 'selected' : ''"
+          (click)="filter_projects('webservices')"
+        >
+          Web Service
+        </button>
       </div>
-  
-      <div class="gridder my-3" >
-        <div *ngFor="let project of selectedProjects; let i=index">
-          <a [routerLink] = "['/projects/project-details', project.id]" >
-        <div class="grid-item wow zoomIn" ngClass="{{project.project_type}}" >
-  
-          <div class="img-place" >
-  
-  
-            <img src="{{get_landing(project.images)}}"  alt="{{project.name}}" style="max-height: 180px;">
-            <div class="img-caption">
-  
-              <h5 class="fg-theme"> {{project.name}}</h5>
-              <p *ngIf="currentlanguage=='fr'">{{project.subName_fr}}</p>
-              <p *ngIf="currentlanguage=='en'">{{project.subName_en}}</p>
+
+      <div class="gridder my-3">
+        <div *ngFor="let project of selectedProjects; let i = index">
+          <a [routerLink]="['/projects/project-details', project.id]">
+            <div
+              class="grid-item wow zoomIn"
+              ngClass="{{ project.project_type }}"
+            >
+              <div class="img-place">
+                <img
+                  src="{{ get_landing(project.images) }}"
+                  alt="{{ project.name }}"
+                  style="max-height: 180px"
+                />
+                <div class="img-caption">
+                  <h5 class="fg-theme">{{ project.name }}</h5>
+                  <p *ngIf="currentlanguage == 'fr'">
+                    {{ project.subName_fr }}
+                  </p>
+                  <p *ngIf="currentlanguage == 'en'">
+                    {{ project.subName_en }}
+                  </p>
+                </div>
+              </div>
             </div>
-          </div>
+          </a>
         </div>
-        </a>
+        <div *ngIf="selectedProjects.length == 0" class="container">
+          <h3 class="text-center fw-normal wow fadeInUp" style="color: brown">
+            {{ "translation.no-projects-were-found" | translate }}
+          </h3>
+        </div>
       </div>
-      <div *ngIf="selectedProjects.length==0" class="container"><h3 class="text-center fw-normal wow fadeInUp" style="color: brown;"> {{'translation.no-projects-were-found' | translate}}</h3> </div>
-      </div> <!-- End gridder -->
+      <!-- End gridder -->
     </div>
-    </div>
-  </div> <!-- End Portfolio page -->
-  
-  
-  
-  
-  
-  
+  </div>
+</div>
+<!-- End Portfolio page -->
