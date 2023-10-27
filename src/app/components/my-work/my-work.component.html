@@ -35,7 +35,7 @@
         >
           Web application
         </button>
-        <button
+      <!--  <button
           class="btn btn-theme-outline"
           [ngClass]="selected_project_type == 'mobile' ? 'selected' : ''"
           (click)="filter_projects('mobile')"
@@ -48,11 +48,11 @@
           (click)="filter_projects('webservices')"
         >
           Web Service
-        </button>
-      </div>
+        </button> -->
+       </div>
 
       <div class="gridder my-3">
-        <div *ngFor="let project of selectedProjects; let i = index">
+        <div *ngFor="let project of selectedProjects.slice(0,6); let i = index">
           <a [routerLink]="['/projects/project-details', project.id]">
             <div
               class="grid-item wow zoomIn"
@@ -84,17 +84,20 @@
           </h3>
         </div>
       </div>
-      <!-- End gridder -->
-      <div class="text-center wow fadeInUp">
-        <a
-          href="javascript:void(0)"
-          class="btn btn-theme"
-          routerLink="/projects/all-projects"
-          *ngIf="selectedProjects.length > 5"
-          >{{ "translation.load-more" | translate }}</a
-        >
-      </div>
+  
     </div>
+    
   </div>
+  
 </div>
+  <!-- End gridder -->
+  <div class="text-center wow fadeInUp">
+    <a
+      href="javascript:void(0)"
+      class="btn btn-theme"
+      routerLink="/projects/all-projects"
+      *ngIf="selectedProjects.length > 5"
+      >{{ "translation.load-more" | translate }}</a
+    >
+  </div>  
 <!-- End Portfolio page -->
