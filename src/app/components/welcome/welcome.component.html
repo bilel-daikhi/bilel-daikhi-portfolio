@@ -4,7 +4,11 @@
     <div class="row">
       <div class="col-lg-4 py-3">
         <div class="img-place wow fadeInUp">
-          <img src="/assets/img/bilel2.png" style="height: 350px;" alt="Bilel Daikhi" />
+          <img
+            src="/assets/img/bilel2.png"
+            style="height: 350px"
+            alt="Bilel Daikhi"
+          />
         </div>
       </div>
       <div class="col-lg-6 offset-lg-1 wow fadeInRight">
@@ -12,7 +16,7 @@
         <h5 class="fg-theme mb-3">
           {{ "translation.occupation" | translate }}
         </h5>
-   
+
         <div class="text-muted">
           {{ "translation.introduction" | translate }}
         </div>
@@ -34,15 +38,18 @@
         <a
           class="btn btn-theme-outline"
           *ngIf="currentlanguage === 'fr'"
-          
-          [href]="['https://firebasestorage.googleapis.com/v0/b/bilel-daikhi-portfolio.appspot.com/o/cv%2FCV_Bilel_Daikhi_FR.pdf?alt=media&token=e8ff7866-94e6-4d53-b8a3-c2d5d9b5026b&_gl=1*1jikqrg*_ga*NDYzMzE1NTE2LjE2ODM0Mjg5Mjk.*_ga_CW55HF8NVT*MTY5OTI1Njg4NS4xOS4xLjE2OTkyNTcxNTEuNjAuMC4w']"
+          [href]="[
+            'https://firebasestorage.googleapis.com/v0/b/bilel-daikhi-portfolio.appspot.com/o/cv%2FCV_Bilel_Daikhi_FR.pdf?alt=media&token=282faf9b-5a59-4f17-b93a-63904b23001e'
+          ]"
           target="_blank"
           >{{ "translation.download" | translate }}</a
         >
         <a
           class="btn btn-theme-outline"
           *ngIf="currentlanguage === 'en'"
-          [href]="['https://firebasestorage.googleapis.com/v0/b/bilel-daikhi-portfolio.appspot.com/o/cv%2FCV_Bilel_Daikhi_EN.pdf?alt=media&token=8fa2ea80-b936-41a4-8905-a5393a38cc7f&_gl=1*10hbmka*_ga*NDYzMzE1NTE2LjE2ODM0Mjg5Mjk.*_ga_CW55HF8NVT*MTY5OTI1Njg4NS4xOS4xLjE2OTkyNTcxOTMuMTguMC4w']"
+          [href]="[
+            'https://firebasestorage.googleapis.com/v0/b/bilel-daikhi-portfolio.appspot.com/o/cv%2FCV_Bilel_Daikhi_EN.pdf?alt=media&token=155c4082-7925-4b7f-b846-dc20d6ef53ef'
+          ]"
           target="_blank"
           >{{ "translation.download" | translate }}</a
         >
