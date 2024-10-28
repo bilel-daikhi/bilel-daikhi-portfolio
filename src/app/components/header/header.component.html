@@ -1,7 +1,7 @@
 <div
   class="vg-page page-home"
-  id="home" 
-  style="background-image: url(/assets/img/bg_image_1.jpg);" 
+  id="home"
+  style="background-image: url(/assets/img/bg_image_1.jpg);"
 >
   <!-- Navbar -->
   <div class="navbar navbar-expand-lg navbar-dark sticky" data-offset="500">
@@ -74,14 +74,23 @@
         </ul>
 
         <ul class="nav ml-auto">
-          <li class="nav-item">
-            <button
-              class="btn btn-fab btn-theme no-shadow"
-              (click)="changeLanguage()"
-            >
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle  text-white"
+              href="#"
+              id="languageDropdown"
+              role="button"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false">
               {{ currentlanguage === "fr" ? "FR" : "EN" }}
-            </button>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right w-auto" aria-labelledby="languageDropdown">
+              <a class="dropdown-item active" [class.active]="currentlanguage === 'en'" href="#" (click)="changeLanguage('en',$event)">EN</a>
+              <a class="dropdown-item" href="#"  [class.active]="currentlanguage === 'fr'" (click)="changeLanguage('fr',$event)">FR</a>
+            </div>
           </li>
+
         </ul>
       </div>
     </div>
@@ -97,8 +106,8 @@
     <div class="badge">{{ "translation.occupation" | translate }}</div>
   </div>
   <!-- End Caption header -->
- 
- 
+
+
   <div class='icon-scroll floating-button'></div>
   <div
     class="caption-header text-center wow zoomInDown"

@@ -14,7 +14,11 @@
 }
 
 
-
+.dropdown-menu.w-auto {
+  min-width: fit-content; /* Ensures the dropdown adjusts to content width */
+  max-width: 200px;       /* Optional: set a max width to prevent overflow */
+ /* padding: 0.5rem 1rem;   /* Adjust padding for consistent styling */
+}
 
 
 
@@ -29,7 +33,7 @@
   width: 20px;
   height: 35px;
   margin-left: -20px;
- 
+
   margin-top: -35px;
   box-shadow: inset 0 0 0 1px #fff;
   border-radius: 25px;
@@ -40,7 +44,7 @@
   height: 8px;
   background: #fff;
   margin-left: -4px;
- 
+
   border-radius: 4px;
   animation-duration: 1.5s;
   animation-iteration-count: infinite;
