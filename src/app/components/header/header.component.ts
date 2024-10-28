@@ -103,11 +103,12 @@ export class HeaderComponent implements OnInit {
   isSelected(fragment: string) {
     this.activeFragment$.next(fragment);
   }
-  changeLanguage() {
-    if (this.currentlanguage == 'en') {
-      this.currentlanguage = 'fr';
-    } else if (this.currentlanguage == 'en') {
+  changeLanguage(language: string,event:any) {
+    event.preventDefault();
+    if (language == 'en') {
       this.currentlanguage = 'en';
+    } else if (language == 'fr') {
+      this.currentlanguage = 'fr';
     } else {
       this.currentlanguage = 'en';
     }
@@ -116,9 +117,9 @@ export class HeaderComponent implements OnInit {
   // TODO: Cross browsing
   gotoTop() {
     this.changeFragment('home');
-    /* window.scroll({ 
-        top: 0, 
-        left: 0, 
+    /* window.scroll({
+        top: 0,
+        left: 0,
         behavior: 'smooth'
       });*/
   }
