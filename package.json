@@ -26,9 +26,9 @@
     "@ngx-translate/core": "^14.0.0",
     "@ngx-translate/http-loader": "^7.0.0",
     "@types/hammerjs": "^2.0.41",
+    "bilel-daikhi-portfolio": "file:",
     "font-awesome": "^4.7.0",
     "hammerjs": "^2.0.8",
-    
     "jquery.animate-number": "^0.0.14",
     "mousetrap": "^1.6.5",
     "ngx-owl-carousel-o": "^7.0.4",
