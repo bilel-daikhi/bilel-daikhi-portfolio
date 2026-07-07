@@ -4608,6 +4608,12 @@ body.device-touch.device-xs .portfolio-notitle .portfolio-overlay { display: non
 	height: auto;
 }
 
+.related-thumb {
+	display: block;
+	width: 100%;
+	height: 180px;
+	object-fit: cover;
+}
 
 /* Portfolio & Blog Single - Masonry
 -----------------------------------------------------------------*/
