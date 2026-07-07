@@ -3,10 +3,10 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { TranslateService } from '@ngx-translate/core';
 import { Contact } from 'src/app/model/contact.model';
 import { NotificationType } from 'src/app/model/notification.message';
-import { Project } from 'src/app/model/project';
+import { Experience } from 'src/app/model/experience';
 import { ContactService } from 'src/app/services/contact.service';
+import { ExperienceService } from 'src/app/services/experience.service';
 import { NotificationService } from 'src/app/services/notification.service';
-import { ProjectsService } from 'src/app/services/projects.service';
 
 @Component({
   selector: 'app-welcome',
@@ -21,20 +21,20 @@ export class WelcomeComponent {
   subject!: FormControl;
   message!: FormControl;
   currentlanguage: any;
-  projects: Project[] = [];
+  experiences: Experience[] = [];
   constructor(
     private contactService: ContactService,
     private notificationService: NotificationService,
     public translateService: TranslateService,
-    public projectService: ProjectsService
+    public experienceService: ExperienceService
   ) {}
 
   ngOnInit(): void {
     this.isloading = true;
-    this.projectService.getAllProjects().subscribe({
-      next: (projects) => {
+    this.experienceService.getAllExperiences().subscribe({
+      next: (experiences) => {
         this.isloading = false;
-        this.projects = projects;
+        this.experiences = experiences;
       },
     });
     this.formdata = new FormGroup({
@@ -49,11 +49,6 @@ export class WelcomeComponent {
     });
   }
   onClickSubmit(data: any) {
-    /* this.email = data.email;
-    this.name= data.name;
-    this.subject= data.subject;
-    this.message= data.message;*/
-    console.log('is form valide: ' + this.formdata.valid);
     if (this.formdata.valid) {
       let contact: Contact = {
         email: data.email,
@@ -83,18 +78,5 @@ export class WelcomeComponent {
         type: NotificationType.error,
       });
     }
-  }
-  proj: Project | undefined;
-  getProjectById(selectedId: number): Project | undefined {
-    /* this.projectService.getProjectById(selectedId).subscribe(project=>{
-      this.proj=project;
-    })*/
-
-    /* this.proj= this.projects.find(project=>{
-      project.id==selectedId;
-    }); */
-    this.proj = this.projects.find((item) => item.id == selectedId); //find()
-    console.log('selected proj: ' + JSON.stringify(this.proj));
-    return this.proj;
   }
 }
